@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan Kasir NICESO - Multi Store</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 font-sans min-h-screen">
+
+    <!-- Header -->
+    <header class="bg-red-600 text-white shadow-md py-4 px-6 mb-6">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center">
+            <h1 class="text-2xl font-bold tracking-wide">📦 LAPORAN KASIR NICESO</h1>
+            <p class="text-sm bg-red-700 px-3 py-1 rounded mt-2 md:mt-0">Sistem Rekonsiliasi & Kasir Multi-Store</p>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="max-w-6xl mx-auto px-4 pb-12">
+        
+        <!-- Store Navigation Tabs -->
+        <div class="flex flex-wrap gap-2 mb-6 border-b border-gray-300 pb-3" id="storeTabs">
+            <button onclick="switchStore('store52')" class="store-tab px-4 py-2 font-semibold text-sm rounded-lg bg-red-600 text-white shadow transition-all">NICESO 52 CILEGON</button>
+            <button onclick="switchStore('store53')" class="store-tab px-4 py-2 font-semibold text-sm rounded-lg bg-white text-gray-700 hover:bg-gray-200 shadow transition-all">NICESO 53 ANYER</button>
+            <button onclick="switchStore('store55')" class="store-tab px-4 py-2 font-semibold text-sm rounded-lg bg-white text-gray-700 hover:bg-gray-200 shadow transition-all">NICESO 55 KRAMATWATU</button>
+            <button onclick="switchStore('store65')" class="store-tab px-4 py-2 font-semibold text-sm rounded-lg bg-white text-gray-700 hover:bg-gray-200 shadow transition-all">NICESO 65 CILEGON 2</button>
+        </div>
+
+        <!-- Content Sections for Each Store -->
+        <div id="storeContentContainer">
+            
+            <!-- STORE 52 -->
+            <div id="store52" class="store-section space-y-6">
+                <div class="bg-white rounded-xl shadow p-6 border-t-4 border-red-600">
+                    <h2 class="text-xl font-bold text-gray-800 mb-4">🏪 NICESO 52 CILEGON - Laporan Kasir</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                        <div class="bg-red-50 p-4 rounded-lg border border-red-200">
+                            <p class="text-xs text-red-600 font-bold uppercase">Total Penjualan Hari Ini</p>
+                            <p class="text-2xl font-extrabold text-red-700">Rp 4.550.000</p>
+                        </div>
+                        <div class="bg-slate-50 p-4 rounded-lg border border-slate-200">
+                            <p class="text-xs text-slate-600 font-bold uppercase">Status Setoran</p>
+                            <p class="text-lg font-bold text-green-600">Terverifikasi</p>
+                        </div>
+                        <div class="bg-slate-50 p-4 rounded-lg border border-slate-200">
+                            <p class="text-xs text-slate-600 font-bold uppercase">Wilayah Operasional</p>
+                            <p class="text-lg font-bold text-gray-700">Cilegon Region</p>
+                        </div>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="bg-gray-100 text-gray-700 text-xs uppercase">
+                                    <th class="p-3 border">Tanggal</th>
+                                    <th class="p-3 border">Shift</th>
+                                    <th class="p-3 border">Nama Kasir</th>
+                                    <th class="p-3 border">Tunai (Cash)</th>
+                                    <th class="p-3 border">EDC / Transfer</th>
+                                    <th class="p-3 border">QRIS</th>
+                                    <th class="p-3 border">Total</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-sm text-gray-600">
+                                <tr>
+                                    <td class="p-3 border">2026-11-12</td>
+                                    <td class="p-3 border">Shift 1</td>
+                                    <td class="p-3 border">Kasir 52</td>
+                                    <td class="p-3 border">Rp 2.500.000</td>
+                                    <td class="p-3 border">Rp 1.200.000</td>
+                                    <td class="p-3 border">Rp 850.000</td>
+                                    <td class="p-3 border font-bold text-gray-900">Rp 4.550.000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STORE 53 -->
+            <div id="store53" class="store-section hidden space-y-6">
+                <div class="bg-white rounded-xl shadow p-6 border-t-4 border-red-600">
+                    <h2 class="text-xl font-bold text-gray-800 mb-4">🏪 NICESO 53 ANYER - Laporan Kasir</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                        <div class="bg-red-50 p-4 rounded-lg border border-red-200">
+                            <p class="text-xs text-red-600 font-bold uppercase">Total Penjualan Hari Ini</p>
+                            <p class="text-2xl font-extrabold text-red-700">Rp 5.500.000</p>
+                        </div>
+                        <div class="bg-slate-50 p-4 rounded-lg border border-slate-200">
+                            <p class="text-xs text-slate-600 font-bold uppercase">Status Setoran</p>
+                            <p class="text-lg font-bold text-green-600">Terverifikasi</p>
+                        </div>
+                        <div class="bg-slate-50 p-4 rounded-lg border border-slate-200">
+                            <p class="text-xs text-slate-600 font-bold uppercase">Wilayah Operasional</p>
+                            <p class="text-lg font-bold text-gray-700">Anyer Region</p>
+                        </div>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="bg-gray-100 text-gray-700 text-xs uppercase">
+                                    <th class="p-3 border">Tanggal</th>
+                                    <th class="p-3 border">Shift</th>
+                                    <th class="p-3 border">Nama Kasir</th>
+                                    <th class="p-3 border">Tunai (Cash)</th>
+                                    <th class="p-3 border">EDC / Transfer</th>
+                                    <th class="p-3 border">QRIS</th>
+                                    <th class="p-3 border">Total</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-sm text-gray-600">
+                                <tr>
+                                    <td class="p-3 border">2026-11-12</td>
+                                    <td class="p-3 border">Shift 1</td>
+                                    <td class="p-3 border">Kasir 53</td>
+                                    <td class="p-3 border">Rp 3.100.000</td>
+                                    <td class="p-3 border">Rp 1.500.000</td>
+                                    <td class="p-3 border">Rp 900.000</td>
+                                    <td class="p-3 border font-bold text-gray-900">Rp 5.500.000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STORE 55 -->
+            <div id="store55" class="store-section hidden space-y-6">
+                <div class="bg-white rounded-xl shadow p-6 border-t-4 border-red-600">
+                    <h2 class="text-xl font-bold text-gray-800 mb-4">🏪 NICESO 55 KRAMATWATU - Laporan Kasir</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                        <div class="bg-red-50 p-4 rounded-lg border border-red-200">
+                            <p class="text-xs text-red-600 font-bold uppercase">Total Penjualan Hari Ini</p>
+                            <p class="text-2xl font-extrabold text-red-700">Rp 4.650.000</p>
+                        </div>
+                        <div class="bg-slate-50 p-4 rounded-lg border border-slate-200">
+                            <p class="text-xs text-slate-600 font-bold uppercase">Status Setoran</p>
+                            <p class="text-lg font-bold text-green-600">Terverifikasi</p>
+                        </div>
+                        <div class="bg-slate-50 p-4 rounded-lg border border-slate-200">
+                            <p class="text-xs text-slate-600 font-bold uppercase">Wilayah Operasional</p>
+                            <p class="text-lg font-bold text-gray-700">Kramatwatu Region</p>
+                        </div>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="bg-gray-100 text-gray-700 text-xs uppercase">
+                                    <th class="p-3 border">Tanggal</th>
+                                    <th class="p-3 border">Shift</th>
+                                    <th class="p-3 border">Nama Kasir</th>
+                                    <th class="p-3 border">Tunai (Cash)</th>
+                                    <th class="p-3 border">EDC / Transfer</th>
+                                    <th class="p-3 border">QRIS</th>
+                                    <th class="p-3 border">Total</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-sm text-gray-600">
+                                <tr>
+                                    <td class="p-3 border">2026-11-12</td>
+                                    <td class="p-3 border">Shift 1</td>
+                                    <td class="p-3 border">Kasir 55</td>
+                                    <td class="p-3 border">Rp 2.800.000</td>
+                                    <td class="p-3 border">Rp 1.100.000</td>
+                                    <td class="p-3 border">Rp 750.000</td>
+                                    <td class="p-3 border font-bold text-gray-900">Rp 4.650.000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STORE 65 -->
+            <div id="store65" class="store-section hidden space-y-6">
+                <div class="bg-white rounded-xl shadow p-6 border-t-4 border-red-600">
+                    <h2 class="text-xl font-bold text-gray-800 mb-4">🏪 NICESO 65 CILEGON 2 - Laporan Kasir</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                        <div class="bg-red-50 p-4 rounded-lg border border-red-200">
+                            <p class="text-xs text-red-600 font-bold uppercase">Total Penjualan Hari Ini</p>
+                            <p class="text-2xl font-extrabold text-red-700">Rp 5.750.000</p>
+                        </div>
+                        <div class="bg-slate-50 p-4 rounded-lg border border-slate-200">
+                            <p class="text-xs text-slate-600 font-bold uppercase">Status Setoran</p>
+                            <p class="text-lg font-bold text-green-600">Terverifikasi</p>
+                        </div>
+                        <div class="bg-slate-50 p-4 rounded-lg border border-slate-200">
+                            <p class="text-xs text-slate-600 font-bold uppercase">Wilayah Operasional</p>
+                            <p class="text-lg font-bold text-gray-700">Cilegon Region 2</p>
+                        </div>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="bg-gray-100 text-gray-700 text-xs uppercase">
+                                    <th class="p-3 border">Tanggal</th>
+                                    <th class="p-3 border">Shift</th>
+                                    <th class="p-3 border">Nama Kasir</th>
+                                    <th class="p-3 border">Tunai (Cash)</th>
+                                    <th class="p-3 border">EDC / Transfer</th>
+                                    <th class="p-3 border">QRIS</th>
+                                    <th class="p-3 border">Total</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-sm text-gray-600">
+                                <tr>
+                                    <td class="p-3 border">2026-11-12</td>
+                                    <td class="p-3 border">Shift 1</td>
+                                    <td class="p-3 border">Kasir 65</td>
+                                    <td class="p-3 border">Rp 3.400.000</td>
+                                    <td class="p-3 border">Rp 1.400.000</td>
+                                    <td class="p-3 border">Rp 950.000</td>
+                                    <td class="p-3 border font-bold text-gray-900">Rp 5.750.000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center py-6 text-gray-500 text-xs border-t">
+        &copy; 2026 NICESO Retail Supervision - All Rights Reserved.
+    </footer>
+
+    <script>
+        function switchStore(storeId) {
+            const sections = document.querySelectorAll('.store-section');
+            sections.forEach(sec => sec.classList.add('hidden'));
+            document.getElementById(storeId).classList.remove('hidden');
+
+            const tabs = document.querySelectorAll('.store-tab');
+            tabs.forEach(tab => {
+                tab.classList.remove('bg-red-600', 'text-white', 'shadow');
+                tab.classList.add('bg-white', 'text-gray-700', 'hover:bg-gray-200');
+            });
+
+            event.currentTarget.classList.remove('bg-white', 'text-gray-700', 'hover:bg-gray-200');
+            event.currentTarget.classList.add('bg-red-600', 'text-white', 'shadow');
+        }
+    </script>
+</body>
+</html>
